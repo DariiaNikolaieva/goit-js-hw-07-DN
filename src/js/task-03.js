@@ -25,6 +25,18 @@ const images = [
   },
 ];
 
-const imgItemEl = document.createElement("li");
+images.forEach((image) => {
+  document
+    .querySelector("#gallery")
+    .insertAdjacentHTML(
+      "afterbegin",
+      `<li><img src='${image.url}' alt='${image.alt}' width = 200></li>`
+    );
+});
 
-const imgLinkEl = document.createElement("img");
+document
+  .querySelector("#gallery")
+  .setAttribute(
+    "style",
+    "display: flex; justify-content: space-around; align-items: center; list-style-type: none"
+  );
