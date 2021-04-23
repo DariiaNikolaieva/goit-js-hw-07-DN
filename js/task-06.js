@@ -20,4 +20,4 @@ function inputChangeColor() {
   }
 }
 
-inputText.addEventListener("input", inputChangeColor);
+inputText.addEventListener("blur", inputChangeColor);
