@@ -5,8 +5,8 @@
 в span#name-output. Если инпут пустой, 
 в спане должна отображаться строка 'незнакомец'.*/
 
-let inputEl = document.querySelector("#name-input");
-let outputText = document.querySelector("#name-output");
+const inputEl = document.querySelector("#name-input");
+const outputText = document.querySelector("#name-output");
 
 inputEl.addEventListener("input", inputTextChange);
 
