@@ -13,28 +13,42 @@
 Количество элементов: 4
 */
 
-const countQuantityOfCategories = (categories) => {
-  return `В списке ${categories.children.length} категории.`;
-};
+const categoryListItem = document.querySelectorAll(".item");
+// console.log(categoryListItem);
 
-const getTitleOfCategoryItem = (index) => {
-  const titleArray = document.querySelectorAll("h2");
-  return `Категория: ${titleArray[index].textContent}`;
-};
+console.log(`В списке ${categoryListItem.length} категории.`);
 
-const getQuantityOfItemEl = (index) => {
-  const itemEl = document.querySelectorAll(".item");
-  const quantityOfItems = itemEl[index].querySelectorAll("li");
-  return `Количество элементов: ${quantityOfItems.length}`;
-};
+categoryListItem.forEach((elem) => {
+  const titleOfCategory = elem.querySelector("h2").textContent;
+  console.log(`Категория: ${titleOfCategory}`);
 
-console.log(countQuantityOfCategories(document.querySelector("ul#categories")));
+  const quantityOfItems = elem.querySelectorAll(".item li");
+  console.log(`Количество элементов: ${quantityOfItems.length}`);
+});
 
-console.log(getTitleOfCategoryItem(0));
-console.log(getQuantityOfItemEl(0));
+// __________________________________________________________________
+// const countQuantityOfCategories = (categories) => {
+//   return `В списке ${categories.children.length} категории.`;
+// };
 
-console.log(getTitleOfCategoryItem(1));
-console.log(getQuantityOfItemEl(1));
+// const getTitleOfCategoryItem = (index) => {
+//   const titleArray = document.querySelectorAll("h2");
+//   return `Категория: ${titleArray[index].textContent}`;
+// };
 
-console.log(getTitleOfCategoryItem(2));
-console.log(getQuantityOfItemEl(2));
+// const getQuantityOfItemEl = (index) => {
+//   const itemEl = document.querySelectorAll(".item");
+//   const quantityOfItems = itemEl[index].querySelectorAll("li");
+//   return `Количество элементов: ${quantityOfItems.length}`;
+// };
+
+// console.log(countQuantityOfCategories(document.querySelector("ul#categories")));
+
+// console.log(getTitleOfCategoryItem(0));
+// console.log(getQuantityOfItemEl(0));
+
+// console.log(getTitleOfCategoryItem(1));
+// console.log(getQuantityOfItemEl(1));
+
+// console.log(getTitleOfCategoryItem(2));
+// console.log(getQuantityOfItemEl(2));
