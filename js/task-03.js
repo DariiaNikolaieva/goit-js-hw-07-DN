@@ -25,18 +25,40 @@ const images = [
   },
 ];
 
-images.forEach((image) => {
-  document
-    .querySelector("#gallery")
-    .insertAdjacentHTML(
-      "afterbegin",
-      `<li><img src='${image.url}' alt='${image.alt}' width = 200></li>`
-    );
-});
+const galleryList = document.querySelector("#gallery");
+// console.log(galleryList);
 
-document
-  .querySelector("#gallery")
-  .setAttribute(
-    "style",
-    "display: flex; justify-content: space-around; align-items: center; list-style-type: none"
-  );
+const onGalleryItemCreate = ({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}" height = 150></li>`;
+
+// REDUCE
+// const galleryItem = images.reduce(
+//   (acc, item) => acc + onGalleryItemCreate(item),
+//   ""
+// );
+
+// MAP
+const galleryItem = images.map((elem) => onGalleryItemCreate(elem)).join("");
+
+galleryList.insertAdjacentHTML("afterbegin", galleryItem);
+galleryList.setAttribute(
+  "style",
+  "display: flex; justify-content: space-around; align-items: center; list-style-type: none"
+);
+
+// ________________________________________________________________________
+// images.forEach((image) => {
+//   document
+//     .querySelector("#gallery")
+//     .insertAdjacentHTML(
+//       "afterbegin",
+//       `<li><img src='${image.url}' alt='${image.alt}' width = 200></li>`
+//     );
+// });
+
+// document
+//   .querySelector("#gallery")
+//   .setAttribute(
+//     "style",
+//     "display: flex; justify-content: space-around; align-items: center; list-style-type: none"
+//   );
