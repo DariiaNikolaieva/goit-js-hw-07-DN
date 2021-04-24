@@ -12,8 +12,19 @@ const ingredients = [
   "Приправы",
 ];
 
-ingredients.forEach((ingredient) => {
-  const ingredientsItems = document.createElement("li");
-  ingredientsItems.textContent = `${ingredient}`;
-  document.getElementById("ingredients").appendChild(ingredientsItems);
+const ingredientsRef = document.querySelector("#ingredients");
+
+const elementOfIngredients = ingredients.map((elem) => {
+  const ingredient = document.createElement("li");
+  ingredient.textContent = elem;
+  return ingredient;
 });
+
+ingredientsRef.append(...elementOfIngredients);
+
+// ______________________________________________________________________
+// ingredients.forEach((ingredient) => {
+//   const ingredientsItems = document.createElement("li");
+//   ingredientsItems.textContent = `${ingredient}`;
+//   document.getElementById("ingredients").appendChild(ingredientsItems);
+// });
